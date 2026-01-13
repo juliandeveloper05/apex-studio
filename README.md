@@ -209,8 +209,10 @@ apex-photo-studio/
 
 <div align="center">
 
-### **Julian Javier Soto**
-*Full Stack Developer*
+### **Julian Soto**
+#### Senior Software Engineer
+
+*Specialized in TypeScript, Modern Web Architecture & Legacy Systems Modernization*
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/full-stack-julian-soto/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/juliandeveloper05)
