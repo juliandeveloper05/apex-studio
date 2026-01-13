@@ -1,75 +1,166 @@
-# React + TypeScript + Vite
+# ✨ APEX Photo Studio v1.0.0
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
 
-Currently, two official plugins are available:
+![APEX Photo Studio](https://img.shields.io/badge/APEX-Photo%20Studio%20v1.0.0-0ea5e9?style=for-the-badge&logo=aperture&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat-square&logo=typescript)
+![Tailwind](https://img.shields.io/badge/Tailwind-4.1-38B2AC?style=flat-square&logo=tailwindcss)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=flat-square&logo=vite)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Professional photo capture and editing application with a premium Lightroom-inspired interface**
 
-## React Compiler
+[Live Demo](#) · [Features](#-features) · [Getting Started](#-getting-started) · [Keyboard Shortcuts](#-keyboard-shortcuts)
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+</div>
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
+## 🎯 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 📷 Camera Capture
+- **Live Preview** with real-time video feed
+- **Resolution Selection** (4K, 2K, 1080p, 720p, Max Quality)
+- **Timer Mode** (2s, 5s, 10s countdown)
+- **Multi-camera Support** with easy switching
+- **Animated Countdown Overlay**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🎨 Professional Editor
+- **Real-time Image Processing** with instant preview
+- **Before/After Comparison** with draggable split view
+- **Zoom & Pan** with mouse wheel and drag support
+- **Grid Overlays** (Rule of Thirds, Golden Ratio, Diagonals, Center)
+- **Zebra Patterns** for exposure clipping detection
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 🎚️ Adjustment Controls
+| Basic | Color | Detail |
+|-------|-------|--------|
+| Exposure | Temperature | Clarity |
+| Contrast | Tint | Sharpness |
+| Highlights | Vibrance | Noise Reduction |
+| Shadows | Saturation | |
+| Whites | | |
+| Blacks | | |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 📊 Real-time Histogram
+- RGB channel visualization
+- Clipping detection with animated indicators
+- Live updates during adjustments
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/juliandeveloper05/apex-photo-studio.git
+
+# Navigate to the project
+cd apex-photo-studio
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The app will be available at `http://localhost:5173`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Build for Production
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
+npm run preview
 ```
+
+---
+
+## ⌨️ Keyboard Shortcuts
+
+| Key | Action |
+|-----|--------|
+| `C` | Switch to Camera mode |
+| `E` | Switch to Editor mode |
+| `G` | Cycle through grid overlays |
+| `Z` | Toggle zebra patterns |
+| `H` | Toggle histogram |
+| `\` | Toggle before/after comparison |
+| `+` / `-` | Zoom in/out |
+| `0` | Reset zoom to 100% |
+| `Ctrl+Z` | Undo |
+| `Ctrl+Y` | Redo |
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** React 19 with TypeScript
+- **Build Tool:** Vite 7
+- **Styling:** Tailwind CSS 4
+- **State Management:** Zustand
+- **Icons:** Lucide React
+- **Image Processing:** Custom Canvas-based engine
+
+---
+
+## 📁 Project Structure
+
+```
+apex-photo-studio/
+├── src/
+│   ├── components/       # React components
+│   │   ├── Camera.tsx        # Camera capture
+│   │   ├── Editor.tsx        # Image editor
+│   │   ├── Toolbar.tsx       # Top toolbar
+│   │   ├── AdjustmentsPanel.tsx  # Sliders panel
+│   │   ├── Histogram.tsx     # RGB histogram
+│   │   ├── GridOverlay.tsx   # Composition guides
+│   │   └── ZebraOverlay.tsx  # Clipping patterns
+│   ├── engine/           # Image processing
+│   ├── hooks/            # Custom React hooks
+│   ├── types/            # TypeScript definitions
+│   └── utils/            # Utility functions
+├── public/
+└── package.json
+```
+
+---
+
+## ✨ Design Features
+
+- **Glassmorphism UI** with blur effects and transparency
+- **Premium Animations** for smooth interactions
+- **Custom Sliders** with glow effects and bidirectional support
+- **Responsive Layout** for desktop and tablet
+- **Dark Theme** optimized for photo editing
+
+---
+
+## �‍💻 Author
+
+**Julian Javier Soto**
+
+- GitHub: [@juliandeveloper05](https://github.com/juliandeveloper05)
+
+---
+
+## 📄 License
+
+MIT License © 2026 Julian Javier Soto
+
+---
+
+<div align="center">
+
+**APEX Photo Studio v1.0.0**
+
+Made with ❤️ by Julian Javier Soto
+
+</div>
