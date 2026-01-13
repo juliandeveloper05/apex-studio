@@ -143,11 +143,22 @@ apex-photo-studio/
 
 ---
 
-## �‍💻 Author
+## 👨‍💻 Author
 
-**Julian Javier Soto**
+<div align="center">
 
-- GitHub: [@juliandeveloper05](https://github.com/juliandeveloper05)
+### **Julian Javier Soto**
+*Full Stack Developer*
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/full-stack-julian-soto/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/juliandeveloper05)
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://juliansoto-portfolio.vercel.app/es)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/palee_0x71)
+
+📧 **Email:** juliansoto.dev@gmail.com  
+📱 **Phone:** +54 9 11 3066-6369
+
+</div>
 
 ---
 
