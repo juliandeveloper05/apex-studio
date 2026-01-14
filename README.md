@@ -1,8 +1,8 @@
-# ✨ APEX Photo Studio v1.0.0
+# ✨ APEX Photo Studio v1.1.0
 
 <div align="center">
 
-![APEX Photo Studio](https://img.shields.io/badge/APEX-Photo%20Studio%20v1.0.0-0ea5e9?style=for-the-badge&logo=aperture&logoColor=white)
+![APEX Photo Studio](https://img.shields.io/badge/APEX-Photo%20Studio%20v1.1.0-0ea5e9?style=for-the-badge&logo=aperture&logoColor=white)
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat-square&logo=typescript)
 ![Tailwind](https://img.shields.io/badge/Tailwind-4.1-38B2AC?style=flat-square&logo=tailwindcss)
@@ -34,14 +34,40 @@
 - **Zebra Patterns** for exposure clipping detection
 
 ### 🎚️ Adjustment Controls
-| Basic | Color | Detail |
-|-------|-------|--------|
-| Exposure | Temperature | Clarity |
-| Contrast | Tint | Sharpness |
-| Highlights | Vibrance | Noise Reduction |
-| Shadows | Saturation | |
-| Whites | | |
-| Blacks | | |
+
+| Basic | Color | Detail | HSL |
+|-------|-------|--------|-----|
+| Exposure | Temperature | Clarity | Per-color Hue |
+| Contrast | Tint | Sharpness | Per-color Saturation |
+| Highlights | Vibrance | Noise Reduction | Per-color Luminance |
+| Shadows | Saturation | | 8 Color Channels |
+| Whites | | | Skin Tone Protection |
+| Blacks | | | |
+
+### 📈 Tone Curve Editor
+- Interactive SVG-based curve widget
+- RGB master + individual R/G/B channel curves
+- Click to add, drag to move, double-click to remove points
+- Cubic spline interpolation for smooth curves
+- Histogram underlay visualization
+
+### ✨ Creative Effects
+| Effect | Controls |
+|--------|----------|
+| **Vignette** | Amount, Midpoint, Roundness, Feather |
+| **Film Grain** | Amount, Size, Roughness, Monochrome |
+| **Dehaze** | Positive (remove haze) / Negative (add atmosphere) |
+| **Split Toning** | Highlight/Shadow Hue & Saturation, Balance |
+
+### 🔧 Lens Correction
+- **Distortion** - Barrel/Pincushion correction
+- **Chromatic Aberration** - Red/Cyan and Blue/Yellow fringe removal
+
+### 💾 Export
+- **Formats:** JPEG, PNG, WebP
+- **Quality slider** with file size estimation
+- **Resolution presets:** Original, 4K, 2K, 1080p, 720p, Instagram formats
+- **One-click download** with auto-generated filename
 
 ### 📊 Real-time Histogram
 - RGB channel visualization
@@ -112,13 +138,16 @@ npm run preview
 - [x] Before/After comparison mode
 - [x] Glassmorphism premium UI
 
-### Phase 2 - Advanced Editing 🔄 `v1.1.0`
-- [ ] Crop & Rotate tools
-- [ ] HSL/Color panel (Hue, Saturation, Luminance per color)
-- [ ] Tone Curve editor
-- [ ] Vignette effect
-- [ ] Lens correction (Distortion, Chromatic Aberration)
-- [ ] Export with quality settings (JPEG, PNG, WebP)
+### Phase 2 - Advanced Editing ✅ `v1.1.0`
+- [x] HSL/Color panel (Hue, Saturation, Luminance per 8 color channels)
+- [x] Tone Curve editor with cubic spline interpolation
+- [x] Vignette effect with highlight protection
+- [x] Film Grain with monochrome option
+- [x] Dehaze effect
+- [x] Split Toning (shadows/highlights)
+- [x] Lens correction (Distortion, Chromatic Aberration)
+- [x] Export with quality settings (JPEG, PNG, WebP)
+- [x] Transforms engine (crop, rotate, flip)
 
 ### Phase 3 - Presets & Profiles 📅 `v1.2.0`
 - [ ] Built-in preset library (Cinematic, Portrait, Landscape, B&W)
@@ -178,14 +207,22 @@ npm run preview
 apex-photo-studio/
 ├── src/
 │   ├── components/       # React components
-│   │   ├── Camera.tsx        # Camera capture
-│   │   ├── Editor.tsx        # Image editor
-│   │   ├── Toolbar.tsx       # Top toolbar
-│   │   ├── AdjustmentsPanel.tsx  # Sliders panel
-│   │   ├── Histogram.tsx     # RGB histogram
-│   │   ├── GridOverlay.tsx   # Composition guides
-│   │   └── ZebraOverlay.tsx  # Clipping patterns
+│   │   ├── Camera.tsx          # Camera capture
+│   │   ├── Editor.tsx          # Image editor
+│   │   ├── Toolbar.tsx         # Top toolbar with export
+│   │   ├── AdjustmentsPanel.tsx    # Sliders panel
+│   │   ├── HSLPanel.tsx        # HSL per-color adjustments
+│   │   ├── ToneCurveEditor.tsx # Interactive curve widget
+│   │   ├── EffectsPanel.tsx    # Vignette, Grain, Split Toning
+│   │   ├── LensCorrectionPanel.tsx # Distortion & CA
+│   │   ├── ExportModal.tsx     # Export dialog
+│   │   ├── Histogram.tsx       # RGB histogram
+│   │   ├── GridOverlay.tsx     # Composition guides
+│   │   └── ZebraOverlay.tsx    # Clipping patterns
 │   ├── engine/           # Image processing
+│   │   ├── imageProcessing.ts  # Main pipeline
+│   │   ├── adjustments.ts      # All adjustment algorithms
+│   │   └── transforms.ts       # Crop, rotate, flip
 │   ├── hooks/            # Custom React hooks
 │   ├── types/            # TypeScript definitions
 │   └── utils/            # Utility functions
@@ -258,7 +295,7 @@ SOFTWARE.
 
 <div align="center">
 
-**APEX Photo Studio v1.0.0**
+**APEX Photo Studio v1.1.0**
 
 Made with ❤️ by Julian Javier Soto
 
